@@ -1,21 +1,19 @@
-#ifndef MAIN_CPP_INCLUDED
-#define MAIN_CPP_INCLUDED
-#include<stdio.h>
-#include "sample.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(void)
+int main()
 {
-
-    printf("Hello World");
-    print();
-
-    return 0;
-
-
+	FILE *fp = fopen("test.txt", "r+");
+	if (fp == NULL)
+	{
+		puts("Couldn't open file");
+		exit(0);
+	}
+	else
+	{
+		fputs("GeeksforGeeks", fp);
+		puts("Done");
+		fclose(fp);
+	}
+	return 0;
 }
-
-
-
-
-
-#endif // MAIN_CPP_INCLUDED
